@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>PrePopulate</title>
+</h:head> 
+<body> 
+	<h:form>
+		<table>
+			<tr>
+				<h:outputLabel value="Email" />
+				<h:inputText value="#{prePopulateFormValue.email}" />
+			</tr>
+			
+			<tr>
+				<h:outputLabel value="Role" />
+				<h:selectOneMenu value="#{prePopulateFormValue.role}">
+					<f:selectItem itemValue="Admin" itemLabel="Admin"/>
+					<f:selectItem itemValue="User" itemLabel="User"/>
+				</h:selectOneMenu>
+			</tr>
+			<tr>
+				<h:outputLabel value="Status" />
+				<h:selectOneRadio value="#{prePopulateFormValue.active}">
+					<f:selectItem itemValue="Active" itemLabel="Active"/>
+					<f:selectItem itemValue="InActive" itemLabel="InActive"/>
+				</h:selectOneRadio>
+			</tr>
+			<tr>
+				<h:outputLabel value="Permission" />
+				<h:selectManyCheckbox value="#{prePopulateFormValue.permissions}">
+					<f:selectItem itemValue="Create" itemLabel="Create"/>
+					<f:selectItem itemValue="Read" itemLabel="Read"/>
+					<f:selectItem itemValue="Write" itemLabel="Write"/>
+	
+				</h:selectManyCheckbox>
+				
+			</tr>
+			
+			
+			<h:commandButton action="page8-1" value="Submit" />
+		</table>
+	</h:form>
+</body> 
+</html>

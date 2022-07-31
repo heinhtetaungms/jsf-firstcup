@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>DropDown</title>
+</h:head> 
+<body> 
+	<h:form>
+		<table>
+			<tr>
+				<h:outputLabel value="Email" />
+				
+				<h:inputText value="#{dropdown.email}" />
+			</tr>
+			<tr>
+				<h:outputLabel value="Password" />
+				<h:inputText value="#{dropdown.password}" />
+			</tr>
+			<tr>
+				<h:outputLabel value="Role" />
+				<h:selectOneMenu value="#{dropdown.role}">
+					<f:selectItems value="#{dropdown.roleOption}"/>
+				</h:selectOneMenu>
+			</tr>
+			<tr>
+				<h:outputLabel value="Status" />
+				<h:selectOneRadio value="#{radioManage.active}">
+					<f:selectItems value="#{radioManage.statusOptions}" />
+				</h:selectOneRadio>
+				
+			</tr>
+			<h:commandButton action="page5-1" value="Submit" />
+		</table>
+	</h:form>
+</body> 
+</html>

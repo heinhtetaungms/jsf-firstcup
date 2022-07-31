@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>PrePopulate</title>
+	<style>
+			.error {
+				color: red;
+				font-style: italic;
+			}
+	</style>
+</h:head> 
+<body> 
+	<h:form>
+		<table>
+			<tr>
+				<h:outputLabel value="Name" />
+				<h:inputText id="name" value="#{customValidation.name}">
+					<f:validateLength minimum="5" maximum="10" />
+				</h:inputText>
+				<h:message for="name"  styleClass="error"/>
+			</tr>
+			
+			<tr>
+				<h:outputLabel value="Email" />
+				<h:inputText id="email" value="#{customValidation.email}" 
+				validatorMessage="Please Enter Valid email">
+					<f:validateRegex pattern="^[A-Za-z0-9+_.-]+@(.+)$" />
+				</h:inputText>
+				<h:message for="email" styleClass="error"/>
+			</tr>
+			
+			<tr>
+				<h:outputLabel value="Postal Code" />
+				<h:inputText id="postalCode" value="#{customValidation.postalCode}" 
+				validator="#{customValidation.validatePostalCode}" />
+				
+				<h:message for="postalCode" styleClass="error"/>
+			</tr>
+			
+			
+			<h:commandButton action="page11-1" value="Submit" />
+		</table>
+	</h:form>
+</body> 
+</html>

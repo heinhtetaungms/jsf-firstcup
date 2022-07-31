@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>DropDown</title>
+</h:head> 
+<body> 
+	<h:form>
+		<table>
+			<tr>
+				<h:outputLabel value="Email" />
+				<h:inputText value="#{checkBox.email}" />
+			</tr>
+			<tr>
+				<h:outputLabel value="Password" />
+				<h:inputText value="#{checkBox.password}" />
+			</tr>
+			<tr>
+				<h:outputLabel value="Role" />
+				<h:selectOneMenu value="#{checkBox.role}">
+					<f:selectItems value="#{checkBox.roleOption}"/>
+				</h:selectOneMenu>
+			</tr>
+			<tr>
+				<h:outputLabel value="Status" />
+				<h:selectOneRadio value="#{checkBox.active}">
+					<f:selectItems value="#{checkBox.statusOptions}" />
+				</h:selectOneRadio>
+			</tr>
+			<tr>
+				<h:outputLabel value="Permission" />
+				<h:selectManyCheckbox value="#{checkBox.permissions}">
+					<f:selectItem itemValue="Create" itemLabel="Create"/>
+					<f:selectItem itemValue="Read" itemLabel="Read"/>
+					<f:selectItem itemValue="Write" itemLabel="Write"/>
+				</h:selectManyCheckbox>
+				
+			</tr>
+			
+			
+			<h:commandButton action="page6-1" value="Submit" />
+		</table>
+	</h:form>
+</body> 
+</html>
